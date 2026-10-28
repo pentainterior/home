@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PENTA — Interior & Exterior Design</title>
+
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#FAF7F2',
+            surface: '#FFFFFF',
+            surfaceMuted: '#F4EFEB',
+            sand: '#ECE4DB',
+            bronze: {
+              DEFAULT: '#B8824A',
+              light: '#D4A373',
+              dark: '#936132',
+              glow: 'rgba(184, 130, 74, 0.15)'
+            },
+            charcoal: {
+              DEFAULT: '#222326',
+              light: '#4B4D52',
+              muted: '#7B7E86'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth CSS parallax scrolling */
+    .parallax-hero {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @media (max-width: 768px) {
+      .parallax-hero {
+        background-attachment: scroll;
+      }
+    }
+
+    /* Soft reveal on scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Subtle image hover zoom */
+    .card-zoom {
+      overflow: hidden;
+    }
+    .card-zoom img {
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-zoom:hover img {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body class="bg-[#f8f6f2] text-[#1c1d21] font-sans text-base antialiased selection:bg-[#c28b51] selection:text-white">
+
+  <!-- ================= TOP NOTICE BAR ================= -->
+  <div class="bg-[#181a1f] text-slate-300 text-sm py-2.5 px-4 text-center tracking-wide">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+      <span class="inline-flex items-center gap-1.5 text-white font-medium">
+        <i class="fa-solid fa-location-dot text-[#c28b51]"></i> India Anywhere — We Serve All Over India
+      </span>
+      <span class="hidden sm:inline text-slate-600">•</span>
+      <span class="text-slate-300">WhatsApp Only: <strong class="text-white tracking-wider">9946050634</strong></span>
+    </div>
+  </div>
+
+  <!-- ================= CLEAN NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition duration-300 shadow-sm">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#" class="flex flex-col select-none">
+        <span class="text-2xl sm:text-3xl font-bold tracking-[0.16em] text-[#181a1f] uppercase leading-none font-serif">
+          PENTA
+        </span>
+        <span class="text-xs sm:text-xs tracking-[0.25em] text-[#c28b51] uppercase font-semibold mt-1">
+          Interior & Exterior
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wider uppercase text-stone-700">
+        <a href="#services" class="hover:text-[#c28b51] transition">Services</a>
+        <a href="#why-us" class="hover:text-[#c28b51] transition">Why Us</a>
+        <a href="#gallery" class="hover:text-[#c28b51] transition">Gallery</a>
+        <a href="#contact" class="hover:text-[#c28b51] transition">Contact</a>
+      </nav>
+
+      <!-- Clean Standard WhatsApp Nav Button -->
+      <a href="https://wa.me/919946050634?text=Hello%20PENTA%20Team%2C%20I%20would%20like%20to%20inquire%20about%20interior%20services." 
+         target="_blank" 
+         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition shadow-sm active:scale-95">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span>Chat Now</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (HIGH CONTRAST & LEGIBLE) ================= -->
+  <section class="relative min-h-[82vh] flex items-center justify-center text-center px-5 sm:px-6 parallax-hero"
+           style="background-image: linear-gradient(rgba(18, 20, 26, 0.84), rgba(18, 20, 26, 0.88)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80');">
+    
+    <div class="max-w-3xl mx-auto py-16 sm:py-24 text-white fade-up">
+      
+      <span class="inline-block text-xs sm:text-sm uppercase tracking-[0.25em] text-[#e0a96d] font-bold mb-4 bg-white/10 px-4 py-1.5 rounded-full border border-white/15">
+        Your Dream • Our Design
+      </span>
+
+      <!-- Mobile friendly headline (32px mobile, 56px desktop) -->
+      <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-semibold text-white leading-tight mb-5 text-balance">
+        Crafting Quality.<br class="hidden sm:inline"> Creating Comfort.
+      </h1>
+
+      <!-- Mobile friendly readable text (17px mobile, 20px desktop) -->
+      <p class="text-slate-200 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto mb-10 text-balance">
+        Complete interior & exterior solutions. From bespoke multiwood wardrobes and modular kitchens to aluminium fabrication and designer ceilings.
+      </p>
+
+      <!-- Standard, clean, grounded buttons (No weird popups or hoods) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="#services" 
+           class="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#c28b51] hover:bg-[#a9753e] text-white text-base font-semibold tracking-wide transition shadow-lg text-center active:scale-95">
+          View Our Works
+        </a>
+        <a href="https://wa.me/919946050634?text=Hi%20Penta%2C%20I%20would%20like%20to%20discuss%20a%20project%20estimate." 
+           target="_blank"
+           class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-stone-100 text-stone-900 text-base font-semibold tracking-wide transition shadow-lg flex items-center justify-center gap-2.5 active:scale-95">
+          <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KEY VALUE HIGHLIGHTS ================= -->
+  <section class="bg-white border-y border-stone-200 shadow-sm py-8 px-5">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center sm:text-left">
+      <div class="flex items-center gap-4 justify-center sm:justify-start">
+        <div class="w-12 h-12 rounded-xl bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-base text-stone-900">All India Coverage</h4>
+          <p class="text-sm text-stone-600 mt-0.5">We serve customers all over India</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 justify-center sm:justify-start">
+        <div class="w-12 h-12 rounded-xl bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fa-solid fa-couch"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-base text-stone-900">Custom Multiwood</h4>
+          <p class="text-sm text-stone-600 mt-0.5">Waterproof, durable & termite-free</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 justify-center sm:justify-start">
+        <div class="w-12 h-12 rounded-xl bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fa-solid fa-shield-heart"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-base text-stone-900">Design • Quality • Trust</h4>
+          <p class="text-sm text-stone-600 mt-0.5">Direct factory crafting & punctuality</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR WORKS / SERVICES (FLYER ITEMS) ================= -->
+  <section id="services" class="py-20 max-w-6xl mx-auto px-5 sm:px-6">
+    
+    <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+      <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#c28b51] font-bold block mb-2">Our Capabilities</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900">Featured Services</h2>
+      <p class="text-stone-600 text-base sm:text-lg mt-3 leading-relaxed">
+        Everything you need for an exquisite, long-lasting living space under one roof.
+      </p>
+    </div>
+
+    <!-- Clear, solid cards with crisp typography and strong contrast -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1. Multiwood Wardrobe -->
+      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition card-zoom fade-up">
+        <div class="h-60 bg-stone-100 relative">
+          <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=700&q=80" alt="Multiwood Wardrobe" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md tracking-wider uppercase">Wardrobe</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-2">Multiwood Wardrobe</h3>
+          <p class="text-stone-700 text-base leading-relaxed">
+            Floor-to-ceiling customized wardrobes, soft-close sliding doors, integrated lighting, and modular drawer layouts built with 100% waterproof multiwood.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Modular Kitchen & Cabinets -->
+      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition card-zoom fade-up">
+        <div class="h-60 bg-stone-100 relative">
+          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80" alt="Modular Kitchen" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md tracking-wider uppercase">Kitchen</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-2">Kitchen & Cabinets</h3>
+          <p class="text-stone-700 text-base leading-relaxed">
+            Smart modular kitchens designed for everyday comfort. Features acrylic/laminate finishes, pantry pullouts, and durable heat-resistant countertops.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. TV Units & Display Cabinets -->
+      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition card-zoom fade-up">
+        <div class="h-60 bg-stone-100 relative">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80" alt="TV Unit" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md tracking-wider uppercase">Living Room</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-2">TV & Display Units</h3>
+          <p class="text-stone-700 text-base leading-relaxed">
+            Acoustic fluted wood panels, concealed wiring, warm backlighting, and modern glass display shelves that elevate your living hall.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. Aluminium Fabrication & Glass -->
+      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition card-zoom fade-up">
+        <div class="h-60 bg-stone-100 relative">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80" alt="Aluminium Fabrication" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md tracking-wider uppercase">Fabrication</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-2">Aluminium Fabrication</h3>
+          <p class="text-stone-700 text-base leading-relaxed">
+            Sleek powder-coated aluminium sliding partitions, toughened glass balcony handrails, sound-proof windows, and durable frame systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. Gypsum False Ceiling -->
+      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition card-zoom fade-up">
+        <div class="h-60 bg-stone-100 relative">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80" alt="Gypsum False Ceiling" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md tracking-wider uppercase">Ceiling</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-2">Gypsum False Ceiling</h3>
+          <p class="text-stone-700 text-base leading-relaxed">
+            Modern suspended gypsum ceilings with concealed LED strip channels, recessed spotlights, and acoustic balance for every bedroom and hall.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6. Bathroom Fiber Doors & Dressing Units -->
+      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition card-zoom fade-up">
+        <div class="h-60 bg-stone-100 relative">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=80" alt="Fiber Doors" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md tracking-wider uppercase">Doors & Units</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-2">Bathroom Fiber Doors</h3>
+          <p class="text-stone-700 text-base leading-relaxed">
+            100% moisture-proof fiber bathroom doors in decorative wood grain prints, alongside custom illuminated bedroom dressing vanity units.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= HIGH-CONTRAST PARALLAX CTA BANNER ================= -->
+  <section class="py-20 parallax-hero relative text-center px-5 sm:px-6"
+           style="background-image: linear-gradient(rgba(18, 20, 26, 0.88), rgba(18, 20, 26, 0.92)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80');">
+    <div class="max-w-2xl mx-auto text-white fade-up">
+      <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#e0a96d] font-bold block mb-3">Instant Consultation</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 leading-snug">
+        Have a floorplan or idea in mind?
+      </h2>
+      <p class="text-slate-200 text-base sm:text-lg font-normal max-w-xl mx-auto mb-8 leading-relaxed">
+        Send your requirements or room measurements directly on WhatsApp. We provide prompt advice and cost-effective estimates.
+      </p>
+      <a href="https://wa.me/919946050634?text=Hi%20Penta%2C%20I%20have%20an%20interior%20plan%20and%20would%20like%20a%20quote."
+         target="_blank"
+         class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-base font-semibold transition duration-200 shadow-xl active:scale-95">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span>Chat with Us on 9946050634</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FLYER WORKS & WHY CHOOSE US ================= -->
+  <section id="why-us" class="py-20 max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="bg-white rounded-3xl border border-stone-200 p-8 sm:p-12 shadow-sm">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#c28b51] font-bold block mb-2">All-in-One Craftsmanship</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-stone-900">Why Homeowners Trust PENTA</h2>
+        <p class="text-stone-600 text-base sm:text-lg mt-2">
+          Specialized services delivered with fine materials, factory-grade machinery, and seasoned craftsmen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl bg-stone-50 border border-stone-100 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 text-base">MS & Glass Works</h4>
+            <p class="text-sm text-stone-600 mt-1">Sturdy mild steel fabrication and safety glass installations.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-stone-50 border border-stone-100 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 text-base">ACP Exterior Works</h4>
+            <p class="text-sm text-stone-600 mt-1">Weather-resistant aluminium composite cladding for modern elevations.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-stone-50 border border-stone-100 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 text-base">Prayer Room Interiors</h4>
+            <p class="text-sm text-stone-600 mt-1">Peaceful pooja mandir units with CNC jaali work and brass fixtures.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-stone-50 border border-stone-100 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 text-base">Multiwood Furniture</h4>
+            <p class="text-sm text-stone-600 mt-1">Custom shoe racks, crockery shelves, study desks, and storage.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-stone-50 border border-stone-100 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 text-base">Transparent Pricing</h4>
+            <p class="text-sm text-stone-600 mt-1">No hidden costs; clear itemized estimates prior to starting works.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-stone-50 border border-stone-100 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c28b51]/15 text-[#c28b51] flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 text-base">All Interior Works</h4>
+            <p class="text-sm text-stone-600 mt-1">End-to-end turnkey project execution from planning to handover.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section id="gallery" class="py-16 max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 fade-up">
+      <div>
+        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#c28b51] font-bold block mb-1">Visual Inspiration</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-stone-900">Crafted Living Spaces</h2>
+      </div>
+      <p class="text-stone-600 text-base mt-2 sm:mt-0">Real finishes, warm woods, clean lighting.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="h-64 rounded-2xl overflow-hidden card-zoom border border-stone-200 shadow-sm fade-up">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Living Room Decor" class="w-full h-full object-cover">
+      </div>
+      <div class="h-64 rounded-2xl overflow-hidden card-zoom border border-stone-200 shadow-sm fade-up">
+        <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80" alt="Dining Room" class="w-full h-full object-cover">
+      </div>
+      <div class="h-64 rounded-2xl overflow-hidden card-zoom border border-stone-200 shadow-sm fade-up">
+        <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=600&q=80" alt="Bedroom Wardrobe" class="w-full h-full object-cover">
+      </div>
+      <div class="h-64 rounded-2xl overflow-hidden card-zoom border border-stone-200 shadow-sm fade-up">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="Kitchen Countertop" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & GET IN TOUCH ================= -->
+  <section id="contact" class="py-20 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center fade-up">
+      <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#c28b51] font-bold block mb-2">Connect With Us</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 mb-4">Contact For Your Dream Space</h2>
+      <p class="text-stone-700 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+        Whether you are building a new house or renovating an apartment, reach out directly via WhatsApp for measurements and consultations.
+      </p>
+
+      <div class="inline-flex flex-col sm:flex-row items-center gap-5 bg-white p-6 sm:px-8 sm:py-5 rounded-2xl border border-stone-200 shadow-md">
+        <div class="flex items-center gap-4 text-left">
+          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl flex-shrink-0">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <span class="text-xs uppercase tracking-wider text-stone-500 font-semibold block">WhatsApp Only</span>
+            <span class="text-xl font-bold text-stone-900 tracking-wide">9946050634</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919946050634?text=Hi%20Penta%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding%20interior%20works." 
+           target="_blank"
+           class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-base font-semibold transition text-center">
+          Message Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLEAN FOOTER ================= -->
+  <footer class="bg-[#181a1f] text-slate-300 py-12 px-5 sm:px-6 border-t border-stone-800 text-sm">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div>
+        <span class="font-serif text-2xl font-bold tracking-[0.2em] text-white block">PENTA</span>
+        <span class="text-xs tracking-[0.25em] text-[#c28b51] font-semibold uppercase">Interior & Exterior</span>
+      </div>
+
+      <div class="text-sm text-slate-300">
+        <i class="fa-solid fa-location-dot text-[#c28b51] mr-1.5"></i>
+        <span>India Anywhere — We Serve All Over India</span>
+      </div>
+
+      <div class="text-xs text-slate-400">
+        &copy; 2026 PENTA Interior & Exterior. Design • Quality • Trust
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= CLEAN, STANDARD FLOATING WHATSAPP BUTTON ================= -->
+  <!-- Clean, standard circular icon in bottom right with no intrusive popup hood -->
+  <div class="fixed bottom-6 right-6 z-50 group">
+    <a href="https://wa.me/919946050634?text=Hi%20PENTA%2C%20I%20have%20an%20interior%20enquiry." 
+       target="_blank" 
+       aria-label="Chat on WhatsApp"
+       class="w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-3xl shadow-xl transition-transform duration-200 hover:scale-105 active:scale-95">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Smooth fade-in observer script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
